@@ -1,0 +1,14 @@
+DELETE http://localhost:8080/passengers/1
+###
+GET http://localhost:8080/airlines/2
+###
+POST http://localhost:8080/airlines
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nom": "Air TEST",
+  "codeIATA": "AF"
+}
+
+### Tester toutes les méthodes (get, post, delete) pour chaque classe (Airline, Flight, Luggage...)

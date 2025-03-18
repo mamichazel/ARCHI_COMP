@@ -15,25 +15,21 @@ public class PlaneController {
     @Autowired
     private PlaneService planeService;
 
-    // 📌 Récupérer tous les avions
     @GetMapping
     public List<Plane> getAllPlanes() {
         return planeService.getAllPlanes();
     }
 
-    // 📌 Récupérer un avion par ID
     @GetMapping("/{id}")
     public Optional<Plane> getPlaneById(@PathVariable Long id) {
         return planeService.getPlaneById(id);
     }
 
-    // 📌 Ajouter un avion
     @PostMapping
     public Plane createPlane(@RequestBody Plane plane) {
         return planeService.createPlane(plane);
     }
 
-    // 📌 Supprimer un avion
     @DeleteMapping("/{id}")
     public void deletePlane(@PathVariable Long id) {
         planeService.deletePlane(id);

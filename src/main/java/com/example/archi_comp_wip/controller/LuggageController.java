@@ -15,25 +15,21 @@ public class LuggageController {
     @Autowired
     private LuggageService luggageService;
 
-    // 📌 Récupérer tous les bagages
     @GetMapping
     public List<Luggage> getAllLuggages() {
         return luggageService.getAllLuggages();
     }
 
-    // 📌 Récupérer un bagage par ID
     @GetMapping("/{id}")
     public Optional<Luggage> getLuggageById(@PathVariable Long id) {
         return luggageService.getLuggageById(id);
     }
 
-    // 📌 Ajouter un bagage
     @PostMapping
     public Luggage createLuggage(@RequestBody Luggage luggage) {
         return luggageService.createLuggage(luggage);
     }
 
-    // 📌 Supprimer un bagage
     @DeleteMapping("/{id}")
     public void deleteLuggage(@PathVariable Long id) {
         luggageService.deleteLuggage(id);

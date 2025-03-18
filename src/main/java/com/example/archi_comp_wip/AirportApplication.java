@@ -43,7 +43,6 @@ public class AirportApplication implements CommandLineRunner {
     private void generateFlightsAndTickets(int numberOfFlights) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
-        // Liste de compagnies et modèles d'avions pour générer les données aléatoires
         String[] airlines = {"Air France", "Lufthansa", "KLM", "Emirates"};
         String[] planeModels = {"Boeing 737", "Airbus A320", "Boeing 787", "Airbus A350"};
         String[] flightStatuses = {"prévu", "retardé", "annulé"};
@@ -65,11 +64,11 @@ public class AirportApplication implements CommandLineRunner {
             // Créer un avion pour la compagnie choisie
             Plane plane = new Plane();
             plane.setModele(planeModels[random.nextInt(planeModels.length)]);
-            plane.setCapacite(150 + random.nextInt(100));  // Capacité entre 150 et 250
+            plane.setCapacite(150 + random.nextInt(100));
             plane.setAirline(airline);
             plane = planeService.createPlane(plane);
 
-            // Créer un vol
+
             Flight flight = new Flight();
             flight.setNumeroVol(airline.getNom().substring(0, 2).toUpperCase() + (100 + i));
             flight.setDateDepart(LocalDateTime.now().plusDays(random.nextInt(30)).withHour(8 + random.nextInt(4)).withMinute(random.nextInt(60)));
@@ -90,13 +89,12 @@ public class AirportApplication implements CommandLineRunner {
                 Ticket ticket = new Ticket();
                 ticket.setNumeroTicket("TICKET" + (1000 + j));
                 ticket.setClasse(random.nextBoolean() ? "économique" : "affaires");
-                ticket.setPrix(150.0 + random.nextInt(350));  // Prix entre 150 et 500
+                ticket.setPrix(150.0 + random.nextInt(350));
                 ticket.setPassenger(passenger);
                 ticket.setFlight(flight);
                 ticketService.createTicket(ticket);
             }
         }
 
-        System.out.println(numberOfFlights + " Vols, Passagers et Tickets générés automatiquement !");
     }
 }

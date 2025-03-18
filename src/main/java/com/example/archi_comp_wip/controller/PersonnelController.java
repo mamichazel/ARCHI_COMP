@@ -15,25 +15,21 @@ public class PersonnelController {
     @Autowired
     private PersonnelService personnelService;
 
-    // 📌 Récupérer tous les membres du personnel
     @GetMapping
     public List<Personnel> getAllPersonnel() {
         return personnelService.getAllPersonnel();
     }
 
-    // 📌 Récupérer un membre du personnel par ID
     @GetMapping("/{id}")
     public Optional<Personnel> getPersonnelById(@PathVariable Long id) {
         return personnelService.getPersonnelById(id);
     }
 
-    // 📌 Ajouter un membre du personnel
     @PostMapping
     public Personnel createPersonnel(@RequestBody Personnel personnel) {
         return personnelService.createPersonnel(personnel);
     }
 
-    // 📌 Supprimer un membre du personnel
     @DeleteMapping("/{id}")
     public void deletePersonnel(@PathVariable Long id) {
         personnelService.deletePersonnel(id);

@@ -14,22 +14,18 @@ public class PassengerService {
     @Autowired
     private PassengerRepository passengerRepository;
 
-    // 📌 Récupérer tous les passagers
     public List<Passenger> getAllPassengers() {
         return passengerRepository.findAll();
     }
 
-    // 📌 Récupérer un passager par ID
     public Optional<Passenger> getPassengerById(Long id) {
         return passengerRepository.findById(id);
     }
 
-    // 📌 Ajouter un passager
     public Passenger createPassenger(Passenger passenger) {
         return passengerRepository.save(passenger);
     }
 
-    // 📌 Mettre à jour un passager
     public Passenger updatePassenger(Long id, Passenger updatedPassenger) {
         return passengerRepository.findById(id).map(passenger -> {
             passenger.setNom(updatedPassenger.getNom());
@@ -40,7 +36,6 @@ public class PassengerService {
         }).orElseThrow(() -> new RuntimeException("Passager non trouvé"));
     }
 
-    // 📌 Supprimer un passager
     public void deletePassenger(Long id) {
         passengerRepository.deleteById(id);
     }
