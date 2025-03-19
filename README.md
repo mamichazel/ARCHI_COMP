@@ -1,0 +1,1 @@
+Pour initialiser l'application il faut d'abord lancer le MainLoic, il va initialiser la base de données et ces relations. Puis pour ajouter, supprimer, modifier et lire des données en requettes HTTP il faut allez dans le fichier Test.http et exécuter toutes les requetes, on peut ensuite voir le resultat de chaque requetes en console
