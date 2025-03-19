@@ -1,14 +1,315 @@
-DELETE http://localhost:8080/passengers/1
-###
-GET http://localhost:8080/airlines/2
-###
+// parti ou l'on ajoute beaucoup de données avec des requetes POST
+
+// Pour les compagnie aerienne
 POST http://localhost:8080/airlines
 Content-Type: application/json
-Accept: application/json
 
 {
-  "nom": "Air TEST",
+  "nom": "Air France",
   "codeIATA": "AF"
 }
 
-### Tester toutes les méthodes (get, post, delete) pour chaque classe (Airline, Flight, Luggage...)
+###
+POST http://localhost:8080/airlines
+Content-Type: application/json
+
+{
+  "nom": "Rayan Air",
+  "codeIATA": "RA"
+}
+
+###
+POST http://localhost:8080/airlines
+Content-Type: application/json
+
+{
+  "nom": "Volotea",
+  "codeIATA": "VO"
+}
+###
+
+// Pour les avions
+POST http://localhost:8080/planes
+Content-Type: application/json
+
+{
+"numeroImmatriculation": "AF12345",
+"modele": "Airbus A320",
+"capacite": 200,
+"airline": {
+"id": 2
+}
+}
+###
+POST http://localhost:8080/planes
+Content-Type: application/json
+
+{
+  "numeroImmatriculation": "RA12345",
+  "modele": "Airbus A319",
+  "capacite": 185,
+  "airline": {
+    "id": 3
+  }
+}
+###
+POST http://localhost:8080/planes
+Content-Type: application/json
+
+{
+  "numeroImmatriculation": "VO12359",
+  "modele": "Airbus A330",
+  "capacite": 485,
+  "airline": {
+    "id": 4
+  }
+}
+
+###
+// Pour les VOLS
+###
+POST http://localhost:8080/flights
+Content-Type: application/json
+
+{
+"numeroVol": "AF1001",
+"dateDepart": "2025-04-01T10:01:30",
+"dateArrivee": "2025-04-01T14:05:00",
+"statut": "prevu",
+"plane": {
+"id": 2
+},
+"airline": {
+"id": 2
+}
+}
+
+###
+POST http://localhost:8080/flights
+Content-Type: application/json
+
+{
+  "numeroVol": "AF1002",
+  "dateDepart": "2025-04-01T10:04:00",
+  "dateArrivee": "2025-04-01T14:06:00",
+  "statut": "prevu",
+  "plane": {
+    "id": 3
+  },
+  "airline": {
+    "id": 3
+  }
+}
+
+###
+POST http://localhost:8080/flights
+Content-Type: application/json
+
+{
+  "numeroVol": "RA1056",
+  "dateDepart": "2025-04-01T10:08:00",
+  "dateArrivee": "2025-04-01T14:15:00",
+  "statut": "annulee",
+  "plane": {
+    "id": 4
+  },
+  "airline": {
+    "id": 4
+  }
+}
+
+###
+
+// Pour les passagers
+###
+POST http://localhost:8080/passengers
+Content-Type: application/json
+
+{
+  "nom": "Dupont",
+  "prenom": "Jean",
+  "email": "jean.dupont@gmail.com",
+  "numeroPasseport": "FR123456789"
+}
+
+###
+POST http://localhost:8080/passengers
+Content-Type: application/json
+
+{
+  "nom": "Lestylo",
+  "prenom": "Marine",
+  "email": "marine.lestylo@gmail.com",
+  "numeroPasseport": "FR1234568988"
+}
+
+###
+POST http://localhost:8080/passengers
+Content-Type: application/json
+
+{
+  "nom": "Lagiraffe",
+  "prenom": "Sophie",
+  "email": "sophie.lagiraffe@outlook.com",
+  "numeroPasseport": "FR1234444444"
+}
+
+###
+// Pour les billets
+POST http://localhost:8080/tickets
+Content-Type: application/json
+
+{
+  "numeroTicket": "BIL0011",
+  "classe": "economique",
+  "prix": 250.00,
+  "passenger": {
+    "id": 2
+  },
+  "flight": {
+    "id": 2
+  }
+}
+
+###
+POST http://localhost:8080/tickets
+Content-Type: application/json
+
+{
+"numeroTicket": "BIL0023",
+"classe": "premiere",
+"prix": 650.00,
+"passenger": {
+"id": 3
+},
+"flight": {
+"id": 3
+}
+}
+
+###
+POST http://localhost:8080/tickets
+Content-Type: application/json
+
+{
+  "numeroTicket": "BIL0089",
+  "classe": "premiere",
+  "prix": 1400.00,
+  "passenger": {
+    "id": 4
+  },
+  "flight": {
+    "id": 4
+  }
+}
+###
+// Pour les bagages
+###
+POST http://localhost:8080/luggages
+Content-Type: application/json
+
+{
+  "poids": 9.0,
+  "type": "cabine",
+  "passenger": {
+    "id": 2
+  }
+}
+###
+POST http://localhost:8080/luggages
+Content-Type: application/json
+
+{
+  "poids": 23.5,
+  "type": "soute",
+  "passenger": {
+    "id": 3
+  }
+}
+###
+POST http://localhost:8080/luggages
+Content-Type: application/json
+
+{
+  "poids": 20.5,
+  "type": "soute",
+  "passenger": {
+    "id": 4
+  }
+}
+###
+
+//pour le peronnel
+
+###
+POST http://localhost:8080/personnel
+Content-Type: application/json
+
+{
+"nom": "Matin",
+"prenom": "Martin",
+"role": "Pilote",
+"plane": {
+"id": 2
+}
+}
+
+###
+POST http://localhost:8080/personnel
+Content-Type: application/json
+
+{
+  "nom": "White",
+  "prenom": "Walter",
+  "role": "Steward",
+  "plane": {
+    "id": 3
+  }
+}
+
+###
+POST http://localhost:8080/personnel
+Content-Type: application/json
+
+{
+  "nom": "Pinkman",
+  "prenom": "Jessy",
+  "role": "Co-pilote",
+  "plane": {
+    "id": 4
+  }
+}
+###
+//enfin pour la relation Many To Many entre flight et personnel
+####
+#POST http://localhost:8080/flight_personnel/2
+#Content-Type: application/json
+#
+#{
+#  "personnelId": 2,
+#  "flight_id":2
+#}
+#
+####
+#POST http://localhost:8080/flights/2/personnel
+#Content-Type: application/json
+#
+#{
+#  "personnelId": 3
+#}
+#
+####
+#POST http://localhost:8080/flights/3/personnel
+#Content-Type: application/json
+#
+#{
+#  "personnelId": 4
+#}
+#
+####
+#POST http://localhost:8080/flights/4/personnel
+#Content-Type: application/json
+#
+#{
+#  "personnelId": 4
+#}
