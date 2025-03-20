@@ -1,4 +1,4 @@
-package com.example.archi_comp_wip;
+/*package com.example.archi_comp_wip;
 
 import com.example.archi_comp_wip.model.*;
 import com.example.archi_comp_wip.service.*;
@@ -103,4 +103,4 @@ public class MainLoic implements CommandLineRunner {
         System.out.println("Toutes les tables ont été initialisées avec une entrée.");
     }
 
-}
+}*/

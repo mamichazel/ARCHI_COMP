@@ -313,3 +313,6 @@ Content-Type: application/json
 #{
 #  "personnelId": 4
 #}
+
+###
+GET http://localhost:8080/flights
