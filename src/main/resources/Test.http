@@ -1,6 +1,7 @@
 // parti ou l'on ajoute beaucoup de données avec des requetes POST
 
 // Pour les compagnie aerienne
+### ajout de Air France
 POST http://localhost:8080/airlines
 Content-Type: application/json
 
@@ -9,7 +10,7 @@ Content-Type: application/json
   "codeIATA": "AF"
 }
 
-###
+### ajout de Rayan Air
 POST http://localhost:8080/airlines
 Content-Type: application/json
 
@@ -18,7 +19,7 @@ Content-Type: application/json
   "codeIATA": "RA"
 }
 
-###
+### ajout de Volotea
 POST http://localhost:8080/airlines
 Content-Type: application/json
 
@@ -26,7 +27,7 @@ Content-Type: application/json
   "nom": "Volotea",
   "codeIATA": "VO"
 }
-###
+###Ajout d'un A320
 
 // Pour les avions
 POST http://localhost:8080/planes
@@ -40,7 +41,8 @@ Content-Type: application/json
 "id": 2
 }
 }
-###
+###Ajout d'un A319
+
 POST http://localhost:8080/planes
 Content-Type: application/json
 
@@ -52,7 +54,8 @@ Content-Type: application/json
     "id": 3
   }
 }
-###
+###Ajout d'un A330
+
 POST http://localhost:8080/planes
 Content-Type: application/json
 
@@ -65,9 +68,9 @@ Content-Type: application/json
   }
 }
 
-###
+###Ajout du vol AF1001
+
 // Pour les VOLS
-###
 POST http://localhost:8080/flights
 Content-Type: application/json
 
@@ -83,46 +86,31 @@ Content-Type: application/json
     "id": 2
   }
 }
-### POST pour créer un vol
-POST http://localhost:8080/flights
-Content-Type: application/json
-
-{
-  "numeroVol": "AF1001",
-  "dateDepart": "2025-04-01T10:01:30",
-  "dateArrivee": "2025-04-01T14:05:00",
-  "statut": "prevu",
-  "plane": {
-    "id": 2
-  },
-  "airline": {
-    "id": 2
-  }
-}
-
-### POST pour créer un vol
-POST http://localhost:8080/flights
-Content-Type: application/json
-
-{
-  "numeroVol": "AF10345",
-  "dateDepart": "2025-04-01T10:01:40",
-  "dateArrivee": "2025-04-01T14:14:00",
-  "statut": "prevu",
-  "plane": {
-    "id": 2
-  },
-  "airline": {
-    "id": 2
-  }
-}
-
-###
+###Ajout du vol AF1002
 POST http://localhost:8080/flights
 Content-Type: application/json
 
 {
   "numeroVol": "AF1002",
+  "dateDepart": "2025-04-01T10:01:30",
+  "dateArrivee": "2025-04-01T14:05:00",
+  "statut": "prevu",
+  "plane": {
+    "id": 2
+  },
+  "airline": {
+    "id": 2
+  }
+}
+
+
+###Ajout du vol AF1003
+
+POST http://localhost:8080/flights
+Content-Type: application/json
+
+{
+  "numeroVol": "AF1003",
   "dateDepart": "2025-04-01T10:04:00",
   "dateArrivee": "2025-04-01T14:06:00",
   "statut": "prevu",
@@ -134,7 +122,8 @@ Content-Type: application/json
   }
 }
 
-###
+###Ajout du vol RA1056
+
 POST http://localhost:8080/flights
 Content-Type: application/json
 
@@ -151,10 +140,11 @@ Content-Type: application/json
   }
 }
 
-###
 
-// Pour les passagers
-###
+
+
+### Ajout du passenger Dupont
+//pour l'ajout des passagers
 POST http://localhost:8080/passengers
 Content-Type: application/json
 
@@ -165,7 +155,7 @@ Content-Type: application/json
   "numeroPasseport": "FR123456789"
 }
 
-###
+### Ajout du passenger Lestylo
 POST http://localhost:8080/passengers
 Content-Type: application/json
 
@@ -176,7 +166,8 @@ Content-Type: application/json
   "numeroPasseport": "FR1234568988"
 }
 
-###
+### Ajout du passenger Lagiraffe
+
 POST http://localhost:8080/passengers
 Content-Type: application/json
 
@@ -187,7 +178,8 @@ Content-Type: application/json
   "numeroPasseport": "FR1234444444"
 }
 
-###
+### Ajout du billet BIL0011
+
 // Pour les billets
 POST http://localhost:8080/tickets
 Content-Type: application/json
@@ -204,7 +196,25 @@ Content-Type: application/json
   }
 }
 
-###
+### Ajout du billet BIL0011
+
+POST http://localhost:8080/tickets
+Content-Type: application/json
+
+{
+"numeroTicket": "BIL35551",
+"classe": "premiere",
+"prix": 435.00,
+"passenger": {
+"id": 4
+},
+"flight": {
+"id": 2
+}
+}
+
+### Ajout du billet BIL0023
+
 POST http://localhost:8080/tickets
 Content-Type: application/json
 
@@ -220,7 +230,8 @@ Content-Type: application/json
 }
 }
 
-###
+### Ajout du billet BIL0089
+
 POST http://localhost:8080/tickets
 Content-Type: application/json
 
@@ -235,9 +246,9 @@ Content-Type: application/json
     "id": 4
   }
 }
-###
+### Ajout d'un bagage cabine
 // Pour les bagages
-###
+
 POST http://localhost:8080/luggages
 Content-Type: application/json
 
@@ -248,7 +259,8 @@ Content-Type: application/json
     "id": 2
   }
 }
-###
+### Ajout d'un bagage soute
+
 POST http://localhost:8080/luggages
 Content-Type: application/json
 
@@ -259,7 +271,8 @@ Content-Type: application/json
     "id": 3
   }
 }
-###
+### Ajout d'un bagage soute
+
 POST http://localhost:8080/luggages
 Content-Type: application/json
 
@@ -270,7 +283,8 @@ Content-Type: application/json
     "id": 4
   }
 }
-###
+### Ajout d'un Pilote Matin
+
 
 //pour le peronnel
 
@@ -287,7 +301,8 @@ Content-Type: application/json
 }
 }
 
-###
+### Ajout d'un Steward White
+
 POST http://localhost:8080/personnel
 Content-Type: application/json
 
@@ -300,7 +315,8 @@ Content-Type: application/json
   }
 }
 
-###
+### Ajout d'un Co-pilote Pinkman
+
 POST http://localhost:8080/personnel
 Content-Type: application/json
 
@@ -312,46 +328,41 @@ Content-Type: application/json
     "id": 4
   }
 }
-###
-//enfin pour la relation Many To Many entre flight et personnel
-####
-#POST http://localhost:8080/flight_personnel/2
-#Content-Type: application/json
-#
-#{
-#  "personnelId": 2,
-#  "flight_id":2
-#}
-#
-####
-#POST http://localhost:8080/flights/2/personnel
-#Content-Type: application/json
-#
-#{
-#  "personnelId": 3
-#}
-#
-####
-#POST http://localhost:8080/flights/3/personnel
-#Content-Type: application/json
-#
-#{
-#  "personnelId": 4
-#}
-#
-####
-#POST http://localhost:8080/flights/4/personnel
-#Content-Type: application/json
-#
-#{
-#  "personnelId": 4
-#}
 
-###
-GET http://localhost:8080/flights/1
+### Récupérer toutes les compagnies aériennes
+GET http://localhost:8080/airlines
 
-### Vérifier si l'avion 2 existe
-GET http://localhost:8080/planes/2
+### Récupérer une compagnie aérienne par ID
+GET http://localhost:8080/airlines/3
 
-### Vérifier si l'Airline 2 existe
-GET http://localhost:8080/airlines/2
+### Récupérer les vols d'une compagnie aérienne EXPLIQUER CETTE REQUETTES DANS LE RAPPORT
+GET http://localhost:8080/flights/2
+
+### Récupérer le deuxieme tiquet EXPLICATION DE CETTE REQUETTE AUSSI
+GET http://localhost:8080/tickets/2
+
+### Récupérer un bagage et voir son propriétaire
+GET http://localhost:8080/luggages/3
+
+
+### Supprimer la compagnie 3
+DELETE http://localhost:8080/airlines/3
+
+### Récupérer une compagnie aérienne par ID
+DELETE http://localhost:8080/airlines/2
+
+### Récupérer les vols d'une compagnie aérienne EXPLIQUER CETTE REQUETTES DANS LE RAPPORT
+DELETE http://localhost:8080/flights/4
+
+### Récupérer le deuxieme tiquet EXPLICATION DE CETTE REQUETTE AUSSI
+DELETE http://localhost:8080/tickets/2
+
+### Récupérer un bagage et voir son propriétaire
+DELETE http://localhost:8080/luggages/3
+
+### vérification
+GET http://localhost:8080/luggages/4
+
+### vérification
+GET http://localhost:8080/flights/4
+

@@ -1,6 +1,7 @@
 package com.example.archi_comp_wip.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
@@ -23,8 +24,10 @@ public class Passenger {
     private String numeroPasseport;
 
     @OneToMany(mappedBy = "passenger", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Ticket> tickets = new ArrayList<>();
 
     @OneToMany(mappedBy = "passenger", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Luggage> luggages = new ArrayList<>();
 }

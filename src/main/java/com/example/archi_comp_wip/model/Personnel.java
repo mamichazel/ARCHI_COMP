@@ -1,6 +1,7 @@
 package com.example.archi_comp_wip.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
@@ -26,6 +27,7 @@ public class Personnel {
     private Plane plane;
 
     @ManyToMany(mappedBy = "personnel")
+    @JsonIgnore
     private List<Flight> flights = new ArrayList<>();
 }
 
