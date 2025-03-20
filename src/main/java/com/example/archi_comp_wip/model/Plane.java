@@ -31,7 +31,7 @@ public class Plane {
     @JsonIgnore
     private List<Flight> flights = new ArrayList<>();
 
-    @OneToMany(mappedBy = "plane", cascade = CascadeType.ALL, orphanRemoval = true)
+    /*@OneToMany(mappedBy = "plane", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore //Sert a eviter
-    private List<Personnel> personnel = new ArrayList<>();
+    private List<Personnel> personnel = new ArrayList<>();*/
 }

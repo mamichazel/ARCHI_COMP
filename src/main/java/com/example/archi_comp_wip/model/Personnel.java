@@ -22,9 +22,9 @@ public class Personnel {
     private String prenom;
     private String role; // pilote, copilote, steward, hôtesse
 
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "plane_id", nullable = false)
-    private Plane plane;
+    private Plane plane;*/
 
     @ManyToMany(mappedBy = "personnel")
     @JsonIgnore

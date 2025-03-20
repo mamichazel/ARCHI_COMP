@@ -62,7 +62,6 @@ public class MainLoic implements CommandLineRunner {
         personnel.setNom("Initialise");
         personnel.setPrenom("Initialise");
         personnel.setRole("Initialise_pilot");
-        personnel.setPlane(plane);
         personnel = personnelService.createPersonnel(personnel);
 
         // Initialiser Flight

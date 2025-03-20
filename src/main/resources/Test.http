@@ -139,8 +139,26 @@ Content-Type: application/json
     "id": 4
   }
 }
+###Ajout du vol RA1056
+POST http://localhost:8080/flights
+Content-Type: application/json
 
-
+{
+"numeroVol": "AF123",
+"dateDepart": "2025-03-20T10:00:00",
+"dateArrivee": "2025-03-20T12:00:00",
+"statut": "prévu",
+"plane": {
+"id": 1
+},
+"airline": {
+"id": 1
+},
+"personnel": [
+{ "id": 1 },
+{ "id": 2 }
+]
+}
 
 
 ### Ajout du passenger Dupont
@@ -295,10 +313,7 @@ Content-Type: application/json
 {
 "nom": "Matin",
 "prenom": "Martin",
-"role": "Pilote",
-"plane": {
-"id": 2
-}
+"role": "Pilote"
 }
 
 ### Ajout d'un Steward White
@@ -309,10 +324,7 @@ Content-Type: application/json
 {
   "nom": "White",
   "prenom": "Walter",
-  "role": "Steward",
-  "plane": {
-    "id": 3
-  }
+  "role": "Steward"
 }
 
 ### Ajout d'un Co-pilote Pinkman
@@ -323,10 +335,7 @@ Content-Type: application/json
 {
   "nom": "Pinkman",
   "prenom": "Jessy",
-  "role": "Co-pilote",
-  "plane": {
-    "id": 4
-  }
+  "role": "Co-pilote"
 }
 
 ### Récupérer toutes les compagnies aériennes
