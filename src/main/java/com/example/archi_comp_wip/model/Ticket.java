@@ -16,7 +16,7 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String numeroTicket;
-    private String classe; // économique, business, première
+    private String classe;
     private Double prix;
 
     @ManyToOne
