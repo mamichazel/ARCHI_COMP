@@ -20,11 +20,7 @@ public class Personnel {
     private Long id;
     private String nom;
     private String prenom;
-    private String role; // pilote, copilote, steward, hôtesse
-
-    /*@ManyToOne
-    @JoinColumn(name = "plane_id", nullable = false)
-    private Plane plane;*/
+    private String role;
 
     @ManyToMany(mappedBy = "personnel")
     @JsonIgnore

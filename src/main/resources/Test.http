@@ -7,7 +7,7 @@ Content-Type: application/json
 
 {
   "nom": "Air France",
-  "codeIATA": "AFR"
+  "codeIATA": "AF"
 }
 
 ### ajout de Rayan Air
@@ -139,27 +139,6 @@ Content-Type: application/json
     "id": 4
   }
 }
-###Ajout du vol RA1056
-POST http://localhost:8080/flights
-Content-Type: application/json
-
-{
-"numeroVol": "AF123",
-"dateDepart": "2025-03-20T10:00:30",
-"dateArrivee": "2025-03-20T12:00:00",
-"statut": "prévu",
-"plane": {
-"id": 1
-},
-"airline": {
-"id": 1
-},
-"personnel": [
-{ "id": 1 },
-{ "id": 2 }
-]
-}
-
 
 ### Ajout du passenger Dupont
 //pour l'ajout des passagers
@@ -338,16 +317,37 @@ Content-Type: application/json
   "role": "Co-pilote"
 }
 
+###Ajout du vol RA1056 en Many to Many
+POST http://localhost:8080/flights
+Content-Type: application/json
+
+{
+  "numeroVol": "AF123",
+  "dateDepart": "2025-03-20T10:00:30",
+  "dateArrivee": "2025-03-20T12:00:00",
+  "statut": "prévu",
+  "plane": {
+    "id": 2
+  },
+  "airline": {
+    "id": 2
+  },
+  "personnel": [
+    { "id": 2 },
+    { "id": 3 }
+  ]
+}
+
 ### Récupérer toutes les compagnies aériennes
 GET http://localhost:8080/airlines
 
 ### Récupérer une compagnie aérienne par ID
 GET http://localhost:8080/airlines/3
 
-### Récupérer les vols d'une compagnie aérienne EXPLIQUER CETTE REQUETTES DANS LE RAPPORT
+### Récupérer les vols d'une compagnie aérienne
 GET http://localhost:8080/flights/2
 
-### Récupérer le deuxieme tiquet EXPLICATION DE CETTE REQUETTE AUSSI
+### Récupérer le deuxieme tiquet
 GET http://localhost:8080/tickets/2
 
 ### Récupérer un bagage et voir son propriétaire
@@ -360,10 +360,10 @@ DELETE http://localhost:8080/airlines/3
 ### Récupérer une compagnie aérienne par ID
 DELETE http://localhost:8080/airlines/2
 
-### Récupérer les vols d'une compagnie aérienne EXPLIQUER CETTE REQUETTES DANS LE RAPPORT
-DELETE http://localhost:8080/flights/4
+### Récupérer les vols d'une compagnie aérienne
+DELETE http://localhost:8080/flights/6
 
-### Récupérer le deuxieme tiquet EXPLICATION DE CETTE REQUETTE AUSSI
+### Récupérer le deuxieme tiquet
 DELETE http://localhost:8080/tickets/2
 
 ### Récupérer un bagage et voir son propriétaire

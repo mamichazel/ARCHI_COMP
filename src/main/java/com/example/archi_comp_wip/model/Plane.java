@@ -1,8 +1,6 @@
 package com.example.archi_comp_wip.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,7 +12,6 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-/*@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")*/
 public class Plane {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,8 +27,4 @@ public class Plane {
     @OneToMany(mappedBy = "plane", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     private List<Flight> flights = new ArrayList<>();
-
-    /*@OneToMany(mappedBy = "plane", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore //Sert a eviter
-    private List<Personnel> personnel = new ArrayList<>();*/
 }
