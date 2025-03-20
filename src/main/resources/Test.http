@@ -7,7 +7,7 @@ Content-Type: application/json
 
 {
   "nom": "Air France",
-  "codeIATA": "AF"
+  "codeIATA": "AFR"
 }
 
 ### ajout de Rayan Air
