@@ -1,4 +1,4 @@
-package com.example.archi_comp_wip;
+/*package com.example.archi_comp_wip;
 
 import com.example.archi_comp_wip.model.*;
 import com.example.archi_comp_wip.service.*;
@@ -94,4 +94,4 @@ public class AirportApplication implements CommandLineRunner {
         }
 
     }
-}
+}*/
