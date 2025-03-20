@@ -1,20 +1,16 @@
 package com.example.archi_comp_wip.controller;
 
 import com.example.archi_comp_wip.model.Flight;
-import com.example.archi_comp_wip.model.Passenger;
 import com.example.archi_comp_wip.model.Personnel;
-import com.example.archi_comp_wip.model.Ticket;
 import com.example.archi_comp_wip.service.FlightService;
 import com.example.archi_comp_wip.service.PersonnelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/flights")
@@ -24,7 +20,7 @@ public class FlightController {
     private FlightService flightService;
 
     @Autowired
-    private PersonnelService personnelService; // Service pour récupérer le personnel
+    private PersonnelService personnelService;
 
     @GetMapping
     public List<Flight> getAllFlights() {
@@ -55,7 +51,7 @@ public class FlightController {
 
         // Ajouter le personnel au vol
         flight.getPersonnel().add(personnel);
-        flightService.createFlight(flight); // Sauvegarder la mise à jour
+        flightService.createFlight(flight);
 
         return ResponseEntity.ok(flight);
     }

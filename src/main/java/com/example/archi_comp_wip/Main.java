@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.time.LocalDateTime;
 
 @SpringBootApplication
-public class MainLoic implements CommandLineRunner {
+public class Main implements CommandLineRunner {
 
     @Autowired
     private AirlineService airlineService;
@@ -34,7 +34,7 @@ public class MainLoic implements CommandLineRunner {
     private TicketService ticketService;
 
     public static void main(String[] args) {
-        SpringApplication.run(MainLoic.class, args);
+        SpringApplication.run(Main.class, args);
     }
 
     @Override

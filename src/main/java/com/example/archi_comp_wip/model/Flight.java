@@ -18,7 +18,7 @@ public class Flight {
     private String numeroVol;
     private LocalDateTime dateDepart;
     private LocalDateTime dateArrivee;
-    private String statut; // prévu, retardé, annulé, en cours, terminé
+    private String statut;
 
     @ManyToOne
     @JoinColumn(name = "plane_id", nullable = false)

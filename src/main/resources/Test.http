@@ -1,3 +1,10 @@
+//Pour ce fichier de test, vous pouvez Run tous les tests d'un seul coup
+//Ceci insérera des données en base (POST), et réalisera quelques GET.
+//Vous pourrez ainsi voir les résultats en console.
+
+//Une fois le fichier executé, vous pouvez décommenter les quelques requetes DELETE (à la fin du fichier) et les executer pour les tester
+
+
 // parti ou l'on ajoute beaucoup de données avec des requetes POST
 
 // Pour les compagnie aerienne
@@ -355,19 +362,19 @@ GET http://localhost:8080/luggages/3
 
 
 ### Supprimer la compagnie 3
-DELETE http://localhost:8080/airlines/3
+#DELETE http://localhost:8080/airlines/3
 
-### Récupérer une compagnie aérienne par ID
-DELETE http://localhost:8080/airlines/2
+### Supprimer une compagnie aérienne par ID
+#DELETE http://localhost:8080/airlines/2
 
-### Récupérer les vols d'une compagnie aérienne
-DELETE http://localhost:8080/flights/6
+### Supprimer un vol
+#DELETE http://localhost:8080/flights/6
 
-### Récupérer le deuxieme tiquet
-DELETE http://localhost:8080/tickets/2
+### Supprimer le deuxieme tiquet
+#DELETE http://localhost:8080/tickets/2
 
-### Récupérer un bagage et voir son propriétaire
-DELETE http://localhost:8080/luggages/3
+### Supprimer un bagage
+#DELETE http://localhost:8080/luggages/3
 
 ### vérification
 GET http://localhost:8080/luggages/4

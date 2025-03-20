@@ -1,8 +1,10 @@
 package com.example.archi_comp_wip.controller;
 
+import com.example.archi_comp_wip.model.Luggage;
 import com.example.archi_comp_wip.model.Passenger;
 import com.example.archi_comp_wip.service.PassengerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,4 +41,12 @@ public class PassengerController {
     public void deletePassenger(@PathVariable Long id) {
         passengerService.deletePassenger(id);
     }
+
+    @GetMapping("/{id}/luggages")
+    public ResponseEntity<List<Luggage>> getPassengerLuggages(@PathVariable Long id) {
+        Optional<Passenger> passenger = passengerService.getPassengerById(id);
+        return passenger.map(p -> ResponseEntity.ok(p.getLuggages()))
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
 }

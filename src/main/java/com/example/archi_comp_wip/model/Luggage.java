@@ -15,7 +15,7 @@ public class Luggage {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private double poids;
-    private String type; // cabine ou soute
+    private String type;
 
     @ManyToOne
     @JoinColumn(name = "passenger_id", nullable = false)
